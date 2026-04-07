@@ -1,24 +1,11 @@
 "use client";
 
-import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { useState, useRef } from "react";
 
 export default function About() {
-  const cursorX = useMotionValue(-100);
-  const cursorY = useMotionValue(-100);
-  const springX = useSpring(cursorX, { stiffness: 300, damping: 30 });
-  const springY = useSpring(cursorY, { stiffness: 300, damping: 30 });
   const [hovering, setHovering] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   // Split the paragraph into individual words for stagger reveal
   const paragraph =
@@ -35,8 +22,6 @@ export default function About() {
       <motion.div
         className="pointer-events-none fixed z-50 rounded-full"
         style={{
-          x: springX,
-          y: springY,
           translateX: "-50%",
           translateY: "-50%",
           width: hovering ? 120 : 16,

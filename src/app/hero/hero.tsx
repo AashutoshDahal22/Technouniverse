@@ -1,13 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { useRef } from "react";
 
 export default function Hero() {
-  const contactRef = useRef<HTMLDivElement | null>(null);
-
-  const handleScrollToContact = () => {
-    contactRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <main className="flex flex-col min-h-screen bg-white text-black font-sans">
