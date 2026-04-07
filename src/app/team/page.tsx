@@ -1,69 +1,176 @@
-'use client'
-import Image from 'next/image';
-import React from 'react';
-import { easeInOut, motion } from 'framer-motion';
+"use client";
 
-export default function Team() {
-  const teamMembers = [
-    {
-      title: "Founder & CEO",
-      image: "/shiba.png",
-      name: "Shiba Prasad Dahal",
-      role: "Visionary Leader",
-    },
-    {
-      title: "CTO",
-      image: "/aashu.jpg",
-      name: "Aashutosh Dahal",
-      role: "Co-Founder and Head Team Lead",
-    },
-    // add more members if needed
-  ];
+import Image from "next/image";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
-  // Card component inside same file
-  const Card: React.FC<{ title: string; image: string; name: string; role: string }> = ({ title, image, name, role }) => {
-    return (
-      <div className="flex flex-col items-center text-center gap-4 w-80">
-        {/* Title */}
-        <h2 className="text-3xl font-light">{title}</h2>
+interface TeamMember {
+  title: string;
+  image: string;
+  name: string;
+  role: string;
+}
 
-        {/* Image with name inside */}
-        <div className="relative w-full h-96 overflow-hidden shadow-lg">
-          <Image
-            src={image}
-            alt={name}
-            fill
-            className="object-cover"
-          />
-        </div>
-            <h3 className="text-xl font-semibold text-black">{name}</h3>
-        {/* Role */}
-        <p className="text-gray-500 text-sm">{role}</p>
-      </div>
-    );
-  };
+const teamMembers: TeamMember[] = [
+  {
+    title: "CEO",
+    image: "/aashu.jpg",
+    name: "Aashutosh Dahal",
+    role: "Co-Founder & Head Team Lead",
+  },
+  {
+    title: "CTO",
+    image: "/aash.jpg",
+    name: "Aayush Pandey",
+    role: "Mobile Development Team Lead",
+  },
+  {
+    title: "CTO",
+    image: "/aash.jpg",
+    name: "Suhash Bajracharya",
+    role: "Cyber Security Head",
+  },
+];
+
+function MemberCard({ member, index }: { member: TeamMember; index: number }) {
+  const [hovered, setHovered] = useState(false);
 
   return (
-    <section className="min-h-screen relative overflow-hidden">
-    <motion.h1
-        initial={{ x: 100, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ type: "tween", ease: easeInOut, duration:0.2 }}
-        viewport={{ once: true }}
-        className="text-6xl text-center pt-25 font-bold mb-35 text-gray-800"
-      >
-        MEET OUR TEAM
-      </motion.h1>
-
-      <div className="flex flex-wrap justify-center gap-40">
-        {teamMembers.map((member, index) => (
-          <Card
-          key={index}
-          title={member.title}
-          image={member.image}
-          name={member.name}
-          role={member.role}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.8,
+        delay: index * 0.2,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      viewport={{ once: true }}
+      className="flex flex-col gap-0 cursor-pointer"
+      style={{ width: "clamp(260px, 28vw, 380px)" }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {/* Image container */}
+      <div className="relative overflow-hidden" style={{ aspectRatio: "3/4" }}>
+        <motion.div
+          animate={{ scale: hovered ? 1.04 : 1 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="w-full h-full"
+        >
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            className="object-cover"
+            style={{
+              filter: hovered
+                ? "brightness(0.75)"
+                : "brightness(0.9) grayscale(0.2)",
+            }}
           />
+        </motion.div>
+
+        {/* Overlay on hover */}
+        <motion.div
+          animate={{ opacity: hovered ? 1 : 0 }}
+          transition={{ duration: 0.4 }}
+          className="absolute inset-0 flex flex-col justify-end p-8"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)",
+          }}
+        >
+          <p className="text-white/80 text-2xl leading-relaxed">
+            {member.role}
+          </p>
+        </motion.div>
+
+        {/* Corner brackets */}
+        <div className="absolute top-4 left-4 w-6 h-6 border-l border-t border-amber-200/40 pointer-events-none" />
+        <div className="absolute bottom-4 right-4 w-6 h-6 border-r border-b border-amber-200/40 pointer-events-none" />
+      </div>
+
+      {/* Text below image */}
+      <div className="pt-6 pb-2 flex flex-col gap-1">
+        <p className="text-xs tracking-[0.35em] uppercase opacity-40 text-black">
+          {member.title}
+        </p>
+        <h3 className="text-2xl md:text-3xl font-light text-black">
+          {member.name}
+        </h3>
+        <div className="mt-3 w-8 h-px bg-amber-200/40" />
+      </div>
+    </motion.div>
+  );
+}
+
+export default function Team() {
+  return (
+    <section className="min-h-screen relative overflow-hidden px-6 md:px-20 py-28">
+      {/* Decorative grid lines */}
+      <div className="absolute inset-0 pointer-events-none opacity-5">
+        {[...Array(5)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute top-0 bottom-0 w-px bg-white"
+            style={{ left: `${(i + 1) * 20}%` }}
+          />
+        ))}
+      </div>
+
+      {/* Header */}
+      <div className="mb-20">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="text-xs tracking-[0.4em] uppercase mb-4 opacity-40 text-black"
+        >
+          The People
+        </motion.p>
+
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+          <motion.h1
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true }}
+            className="text-6xl md:text-8xl font-light text-black leading-none"
+            style={{
+              fontStyle: "bold",
+            }}
+          >
+            Meet the
+            <br />
+            Team
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="text-sm text-black max-w-xs leading-relaxed"
+          >
+            A small team with a large vision — building technology that matters.
+          </motion.p>
+        </div>
+      </div>
+
+      {/* Full-width divider */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: true }}
+        className="w-full h-px bg-white/15 mb-20 origin-left"
+      />
+
+      {/* Cards */}
+      <div className="flex flex-wrap gap-12 md:gap-20 justify-start">
+        {teamMembers.map((member, index) => (
+          <MemberCard key={index} member={member} index={index} />
         ))}
       </div>
     </section>
