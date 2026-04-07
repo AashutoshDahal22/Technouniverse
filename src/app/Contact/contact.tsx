@@ -29,7 +29,7 @@ export default function Contact() {
                 href="mailto:aashudahal11@gmail.com"
                 className="block text-sm hover:underline underline-offset-4 transition duration-200"
               >
-                aashudahal11@gmail.com
+                aashutoshdahal22@gmail.com
               </a>
             </div>
             <div>
@@ -43,10 +43,10 @@ export default function Contact() {
                 9803133855
               </a>
               <a
-                href="tel:9851052369"
+                href="tel:9806770437"
                 className="block text-sm hover:underline underline-offset-4 transition duration-200"
               >
-                9851052369
+                9806770437
               </a>
             </div>
           </div>

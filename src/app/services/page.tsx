@@ -16,20 +16,27 @@ export default function Services() {
     },
     {
       number: "02",
+      title: "Mobile Application Development",
+      tag: "Efficiency",
+      description:
+        "We help business and servies by creating robust and feature rich mobile applications which can help them effeciently gain new customers each month and also allows them ease of access.",
+    },
+    {
+      number: "03",
       title: "AR & 3D Solutions",
       tag: "Immersive Tech",
       description:
         "We design and develop immersive augmented reality (AR) experiences and advanced 3D visualizations that bring your ideas to life. From interactive product demos to cutting-edge architectural visualizations, our AR and 3D solutions enable users to engage with products or concepts in a more dynamic and hands-on way.",
     },
     {
-      number: "03",
+      number: "04",
       title: "Hardware Services",
       tag: "Infrastructure",
       description:
         "Our hardware services cover everything from the sale of top-quality computer parts to professional upgrades and repairs. We work with businesses and individuals to ensure that their computer systems and hardware are running at optimal performance, delivering fast, reliable, and affordable solutions.",
     },
     {
-      number: "04",
+      number: "05",
       title: "Automation Systems",
       tag: "Efficiency",
       description:
