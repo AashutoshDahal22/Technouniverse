@@ -63,13 +63,13 @@ export default function Careers() {
               </div>
 
               <h2 className="text-3xl md:text-5xl font-light leading-tight max-w-3xl">
-                We're not hiring right now.
+                We are not hiring right now.
               </h2>
 
               <p className="mt-7 text-base md:text-lg text-white/45 leading-relaxed max-w-2xl">
-                We’re a small team with diverse skills, working across
+                We are a small team with diverse skills, working across
                 software, hardware, and emerging technologies. As we grow,
-                we’ll update this page with new opportunities for people who
+                we will update this page with new opportunities for people who
                 like solving problems and building things from the ground up.
               </p>
             </div>

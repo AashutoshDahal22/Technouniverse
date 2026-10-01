@@ -92,7 +92,7 @@ export default function Projects() {
         </h1>
 
         <p className="mt-8 text-black/50 max-w-xl text-base md:text-lg leading-relaxed">
-          A selection of the products, systems, and experiences we've built to
+          A selection of the products, systems, and experiences we have built to
           solve real-world problems.
         </p>
       </motion.div>
@@ -310,7 +310,7 @@ export default function Projects() {
           </p>
 
           <h3 className="text-4xl md:text-5xl font-light">
-            Let's build something.
+            Let&apos;s build something.
           </h3>
         </div>
 
