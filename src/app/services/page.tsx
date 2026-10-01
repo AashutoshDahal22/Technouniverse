@@ -22,11 +22,11 @@ export default function Services() {
         "We help business and servies by creating robust and feature rich mobile applications which can help them effeciently gain new customers each month and also allows them ease of access.",
     },
     {
-      number: "03",
-      title: "AR & 3D Solutions",
-      tag: "Immersive Tech",
-      description:
-        "We design and develop immersive augmented reality (AR) experiences and advanced 3D visualizations that bring your ideas to life. From interactive product demos to cutting-edge architectural visualizations, our AR and 3D solutions enable users to engage with products or concepts in a more dynamic and hands-on way.",
+    number: "03",
+    title: "AR & 3D Solutions",
+    tag: "Immersive Tech",
+    description:
+    "We turn ideas into immersive AR experiences and high-quality 3D visuals that capture attention and bring products, spaces, and concepts to life. From interactive product experiences to architectural visualization, we help businesses showcase what they offer in ways people can see, explore, and remember.",
     },
     {
       number: "04",
@@ -36,12 +36,12 @@ export default function Services() {
         "Our hardware services cover everything from the sale of top-quality computer parts to professional upgrades and repairs. We work with businesses and individuals to ensure that their computer systems and hardware are running at optimal performance, delivering fast, reliable, and affordable solutions.",
     },
     {
-      number: "05",
-      title: "Automation Systems",
-      tag: "Efficiency",
-      description:
-        "We help businesses streamline operations and boost efficiency through automation. Our systems optimize workflows, eliminate manual processes, and enhance data accuracy — saving you time, reducing errors, and improving productivity across all levels of your organization.",
-    },
+    number: "05",
+    title: "Security & Automation Systems",
+    tag: "Safety & Efficiency",
+    description:
+    "We design and install security and automation systems for homes and businesses, including CCTV, surveillance, access control, and automated solutions that improve safety, convenience, and operational efficiency.",
+    }
   ];
 
   const toggleIndex = (index: number) => {

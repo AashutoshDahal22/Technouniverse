@@ -13,22 +13,28 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    title: "CEO",
-    image: "/aashu.jpg",
-    name: "Aashutosh Dahal",
-    role: "Co-Founder & Head Team Lead",
+    title: "Founder",
+    image: "/shiba.jpg",
+    name: "Shiba Prasad Dahal",
+    role: "Founder & Chairman",
   },
   {
-    title: "CTO",
-    image: "/aash.jpg",
+    title: "Product Engineer",
+    image: "/aashu.jpg",
+    name: "Aashutosh Dahal",
+    role: "Product Engineering Lead",
+  },
+  {
+    title: "Software Engineer",
+    image: "/aayush.jpg",
     name: "Aayush Pandey",
     role: "Mobile Development Team Lead",
   },
   {
-    title: "CTO",
-    image: "/aash.jpg",
+    title: "CyberSecutiry Engineer",
+    image: "/suhash.jpg",
     name: "Suhash Bajracharya",
-    role: "Cyber Security Head",
+    role: "Cyber Security Lead",
   },
 ];
 
@@ -153,7 +159,7 @@ export default function Team() {
             viewport={{ once: true }}
             className="text-sm text-black max-w-xs leading-relaxed"
           >
-            A small team with a large vision — building technology that matters.
+            A small, focused team with diverse skills and a problem-solving mindset — building technology that matters.
           </motion.p>
         </div>
       </div>

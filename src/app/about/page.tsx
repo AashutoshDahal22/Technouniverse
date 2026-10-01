@@ -9,7 +9,7 @@ export default function About() {
 
   // Split the paragraph into individual words for stagger reveal
   const paragraph =
-    "At Technouniverse, we are a dynamic team of young entrepreneurs driven by an unwavering passion for pushing the boundaries of innovation and advancing the frontiers of technology. Our mission is to deliver cutting-edge solutions that are future-ready, user-centric, and designed to create a lasting global impact. We build powerful web and mobile applications, immersive augmented reality experiences, and advanced 3D technologies — helping businesses not just adapt to the digital landscape, but actively shape it.";
+    "At Technouniverse, we’re a team of young entrepreneurs focused on building and refining software that solves real business problems. We develop web and mobile applications, augmented reality experiences, and 3D solutions that help businesses improve their products, streamline their operations, and build better digital experiences.";
 
   const words = paragraph.split(" ");
 
