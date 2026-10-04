@@ -32,7 +32,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     title: "CyberSecutiry Engineer",
-    image: "/suhash.jpg",
+    image: "/suhas.jpg",
     name: "Suhash Bajracharya",
     role: "Cyber Security Lead",
   },
@@ -51,8 +51,7 @@ function MemberCard({ member, index }: { member: TeamMember; index: number }) {
         ease: [0.22, 1, 0.36, 1],
       }}
       viewport={{ once: true }}
-      className="flex flex-col gap-0 cursor-pointer"
-      style={{ width: "clamp(260px, 28vw, 380px)" }}
+      className="flex flex-col gap-0 cursor-pointer w-full"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -101,9 +100,11 @@ function MemberCard({ member, index }: { member: TeamMember; index: number }) {
         <p className="text-xs tracking-[0.35em] uppercase opacity-40 text-black">
           {member.title}
         </p>
+
         <h3 className="text-2xl md:text-3xl font-light text-black">
           {member.name}
         </h3>
+
         <div className="mt-3 w-8 h-px bg-amber-200/40" />
       </div>
     </motion.div>
@@ -159,7 +160,8 @@ export default function Team() {
             viewport={{ once: true }}
             className="text-sm text-black max-w-xs leading-relaxed"
           >
-            A small, focused team with diverse skills and a problem-solving mindset — building technology that matters.
+            A small, focused team with diverse skills and a problem-solving
+            mindset — building technology that matters.
           </motion.p>
         </div>
       </div>
@@ -174,7 +176,7 @@ export default function Team() {
       />
 
       {/* Cards */}
-      <div className="flex flex-wrap gap-12 md:gap-20 justify-start">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 lg:gap-x-12 gap-y-16">
         {teamMembers.map((member, index) => (
           <MemberCard key={index} member={member} index={index} />
         ))}
